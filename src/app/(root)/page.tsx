@@ -1,30 +1,32 @@
-// app/page.tsx
-import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#0e1f3c]">
-      <div className="max-w-3xl text-center px-6 py-10 bg-white bg-opacity-20 backdrop-blur-lg rounded-xl shadow-2xl mb-36">
-        {/* Main Heading */}
-        <h1 className="text-6xl font-extrabold mb-6 text-white tracking-tight leading-tight">
-          Welcome to ImageGenAI
+    <div className="bg-[#0f172a] text-white min-h-screen flex items-center justify-center shadow-lg animate-fadeInUp">
+      <section className="text-center px-6 p-8 shadow-slate-300 bg-slate-900">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-[#60a5fa] leading-tight mb-6 shadow-md">
+          Turn Ideas into Reality <br className="hidden md:block" /> with AI.
         </h1>
-
-        {/* Subheading */}
-        <p className="text-xl mb-10 text-gray-200">
-        ImageGenAI empowers you to effortlessly bring your imagination to life with AI-powered image generation—all with a click of a button.
+        <p className="text-lg md:text-2xl text-[#dbeafe] max-w-2xl mx-auto mb-8 shadow-md">
+          Unlock creativity like never before. Generate breathtaking images tailored to your imagination with cutting-edge artificial intelligence.
         </p>
-
-        {/* Button */}
-        <Link href="/main">
-          <Button
-            className="bg-gradient-to-r from-green-400 to-teal-500 hover:from-green-500 hover:to-teal-600 text-white text-lg font-semibold py-4 px-10 rounded-full shadow-xl transform transition-all duration-300 hover:scale-110"
-          >
-            Start Generating
-          </Button>
-        </Link>
-      </div>
+        <button className="mt-6 py-3 px-8 bg-[#2563eb] hover:bg-[#1e40af] rounded-lg text-lg font-medium transition">
+          <Link href='/main' >Get Started</Link>
+        </button>
+        <div className="mt-12">
+          {/* Image rendering for the AI Generated Art */}
+          <Image
+            src="/ai.jpg"
+            alt="Example AI Generated Art"
+            width={900}  // High resolution for clarity
+            height={600}
+            className="rounded-lg shadow-lg mx-auto"
+            layout="intrinsic"
+            priority
+          />
+        </div>
+      </section>
     </div>
   );
 }
