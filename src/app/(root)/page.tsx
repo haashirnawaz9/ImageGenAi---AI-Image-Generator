@@ -7,6 +7,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 export default function HomePage() {
   return (
+    
     <div className="bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white min-h-screen flex items-center justify-center p-4 md:p-8 ">
       <motion.section 
         initial={{ opacity: 0, y: 20 }}
