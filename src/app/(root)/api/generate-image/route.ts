@@ -1,21 +1,9 @@
 import { NextResponse } from 'next/server'
 import { HfInference } from '@huggingface/inference'
-import rateLimit from '@/lib/rateLimit'
-
-const limiter = rateLimit({
-    interval: 60 * 1000, // 60 seconds
-    uniqueTokenPerInterval: 500, // Max 500 users per second
-})
 
 const hf = new HfInference(process.env.HUGGINGFACE_API_KEY);
 
 export async function POST(req: Request) {
-    const ip = req.headers.get('x-forwarded-for') ?? '127.0.0.1'
-    try {
-        await limiter.check(NextResponse.next(), 5, ip)
-    } catch {
-        return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
-    }
     
     try {
         const { prompt } = await req.json();
