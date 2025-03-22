@@ -8,7 +8,7 @@ export const checkUser = async () => {
         return null;
     }
 
-    const loggedInUser = await prisma.user.findUnique({
+    const loggedInUser = await prisma.user.findMany({
         where: {clerkId: user.id}
     })
 
@@ -20,7 +20,7 @@ export const checkUser = async () => {
         data: {
             clerkId: user.id,
             name: `${user.firstName} ${user.lastName}`,
-            email: user.emailAddresses[0].emailAddress
+            email: user.emailAddresses[0].emailAddress,
         }
     });
     return newUser;

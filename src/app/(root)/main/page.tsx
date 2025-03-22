@@ -61,8 +61,8 @@ export default function Component() {
 
   return (
     <div className="bg-gradient-to-b from-[#0f172a] to-[#1e293b] mx-auto px-4 py-8 bg-bg min-h-screen bg-[#0f172a]">
-      <h1 className="text-6xl font-heading text-center mb-2 text-text transform -rotate-2">AI Photo Generator</h1>
-      <p className="text-center text-2xl mb-8 text-text transform rotate-1">Transform your ideas into stunning images with AI</p>
+      <h1 className="text-6xl font-heading text-center mb-2 text-text transform -rotate-2 mt-6">AI Photo Generator</h1>
+      <p className="text-center text-2xl mb-10 text-text transform rotate-1">Transform your ideas into stunning images with AI</p>
 
       <div className="max-w-2xl mx-auto">
         <Card className="mb-8 border-4 border-border shadow-light">
