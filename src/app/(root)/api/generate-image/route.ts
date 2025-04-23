@@ -12,7 +12,7 @@ export async function POST(req: Request) {
             inputs: prompt,
             parameters: {
                 guidance_scale: 0.0,
-                num_inference_steps: 80,
+                num_inference_steps: 9,
             },
         });
         console.log('Hugging Face API response received')
