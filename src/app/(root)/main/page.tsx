@@ -39,10 +39,14 @@ export default function Component() {
       } else {
         setError(`Failed to generate image: ${data.error}. ${data.details || ''}`)
       }
-    } catch (err: any) {
-      setError('Error: ' + (err.message || 'Unknown error occurred'))
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError('Failed to generate image: ' + err.message);
+      } else {
+        setError('An unknown error occurred');
+      }
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
   }
 
