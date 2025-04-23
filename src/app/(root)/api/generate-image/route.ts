@@ -8,11 +8,11 @@ export async function POST(req: Request) {
     try {
         const { prompt } = await req.json();
         const response = await hf.textToImage({
-            model: 'stabilityai/stable-diffusion-3.5-large',
+            model: 'stabilityai/stable-diffusion-3.5-large-turbo',
             inputs: prompt,
             parameters: {
                 guidance_scale: 0.0,
-                num_inference_steps: 9,
+                num_inference_steps: 4,
             },
         });
         console.log('Hugging Face API response received')
