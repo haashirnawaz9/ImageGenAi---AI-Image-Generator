@@ -8,12 +8,11 @@ export async function POST(req: Request) {
     try {
         const { prompt } = await req.json();
         const response = await hf.textToImage({
-            model: 'black-forest-labs/FLUX.1-schnell',
+            model: 'black-forest-labs/FLUX.1-dev',
             inputs: prompt,
             parameters: {
                 guidance_scale: 0.0,
-                num_inference_steps: 4,
-                // max_sequence_length: 256,
+                num_inference_steps: 15,
             },
         });
         console.log('Hugging Face API response received')
